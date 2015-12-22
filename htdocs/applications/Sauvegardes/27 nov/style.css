@@ -1,0 +1,363 @@
+
+
+body {
+
+margin-top: 0px;
+background-color: #DAF0FC;  /*bleu clair*/
+/*font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
+/*background: url(/assets/images/rail_et_foret_gimp.png) no-repeat center fixed; */
+-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+background-size: cover; /* version standardisée */
+
+padding-bottom : 90px;
+padding-top: 90px ;
+}
+
+section
+{
+	background-color: FFFFFF;
+	border-width:3px;
+ 	border-style:solid;
+ 	border-color:FFC000;  /*jaune*/
+
+ 	-moz-border-radius:    10px 0;
+	-webkit-border-radius: 10px 0;
+	border-radius:20px 0;
+	width: 70%;
+	padding-top: 5px ;
+	padding-bottom: 15px ;
+	padding-left: 40px ;
+	padding-right: 40px ;
+	/*text-align: center ;	*/
+	margin : auto ; 
+	/*margin-bottom: 110px;*/
+	color : 3B90B1 ;	
+
+}
+
+textarea 
+{
+	width : 100%;
+}
+
+aside
+{
+	border : ;
+}
+
+legend, section, h3
+{
+	color : 3B90B1;  /*bleu */
+}
+
+h5
+{
+	text-align: justify;
+}
+
+address
+{
+	text-align: center;
+}
+
+
+.container-fluid
+{
+	background-color: #595959 ; /*gris clair */
+}
+
+
+.texte
+{
+	background-color: FFFFFF ; /*blanc */
+}
+
+IMG.displayed 
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+
+.entete
+{	
+	/*background: 3B90B1  ;*/
+	background-color: #595959  ;   /*gris clair*/
+	/*width: 70%;*/
+	margin-top: 0px;
+	padding-top: 10px ;
+	padding-bottom: 10px ;
+	/*text-align: center;*/
+/*	padding-left: 40px ;
+	padding-right: 40px */;
+	/*border-style: solid;
+	border-color: 3B90B1 ;
+	text-align: center ;	
+	margin : auto ; 
+	color : 3B90B1 ;
+	outline-color: 3B90B1 ;*/
+}
+
+/* définit la taille du diaporama */
+.carousel .item {
+  	text-align: center ;	
+	margin : auto ; 
+  	min-width: 80%;
+  	max-height: 600px;
+
+}
+
+
+.carousel img {
+  	text-align: center ;	
+	margin : auto ; 
+  	min-width: 80%;
+  	max-height: 600px;
+}
+
+/*.fa
+{
+	color: #ff007f;
+}*/
+
+.bubble_left 
+{
+position: relative;
+width: 670px;
+height: 60px;
+padding: 15px;
+background: #FFFFFF;
+-webkit-border-radius: 11px;
+-moz-border-radius: 11px;
+border-radius: 11px;
+border: #0646A4 solid 2px;
+display: inline-block;
+word-wrap: break-word;
+}
+
+.bubble_left:after 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 9px 16px 9px 0;
+border-color: transparent #FFFFFF;
+display: inline-block;
+width: 0;
+z-index: 1;
+left: -16px;
+top: 15px;
+word-wrap: break-word;
+}
+
+.bubble_left:before 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 10px 17px 10px 0;
+border-color: transparent #0646A4;
+display: inline-block;
+width: 0;
+z-index: 0;
+left: -19px;
+top: 14px;
+word-wrap: break-word;
+}
+
+.bubble_right 
+{
+position: relative;
+width: 670px;
+height: 60px;
+padding: 15px;
+background: #FFFFFF;
+-webkit-border-radius: 11px;
+-moz-border-radius: 11px;
+border-radius: 11px;
+border: #0646A4 solid 2px;
+display: inline-table;
+word-wrap: break-word;
+}
+
+.bubble_right:after 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 9px 0 9px 16px;
+border-color: transparent #FFFFFF;
+display: inline-table;
+width: 0;
+z-index: 1;
+right: -16px;
+top: 15px;
+word-wrap: break-word;
+}
+
+.bubble_right:before 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 10px 0 10px 17px;
+border-color: transparent #0646A4;
+display: inline-table;
+width: 0;
+z-index: 0;
+right: -19px;
+top: 14px;
+word-wrap: break-word;
+}
+
+#sujet 
+{ 
+	width: 80%; 
+}
+
+
+#nav_button
+{
+	background-color: FFC000 ;   /*jaune */
+	border-style: solid;
+	border-color: FFC000 ;
+	color : 000000	;
+}
+
+#propose_button
+{
+	background-color: 65EE65 ;   /*vert */
+	border-style: solid;
+	border-color: 65EE65 ;
+	color : 000000;
+}
+
+#recherche_button
+{
+	background-color: 3B90B1 ;   /*bleu */
+	border-style: solid;
+	border-color: 3B90B1 ;
+	color : 000000	;
+}
+
+
+
+
+#carouselButtons {
+    margin-left: 100px;
+    position: absolute;
+    bottom: 0px;
+}
+
+#sondages
+{
+	text-align: center;
+}
+
+#titre_form
+{	padding-bottom: 15px;
+	margin-bottom: 40px;
+	border-bottom:2px dotted #FFC000;
+	text-align: center;
+}
+
+#anne
+{	
+	padding-top: 10px;
+	padding-bottom: 10px ;
+	border-width:3px;
+ 	border-style:dotted;
+ 	border-color:ff007f;  /*rose*/
+	border-radius:10px 10px;
+
+}
+
+#olivier
+{	
+	padding-top: 10px;
+	padding-bottom: 10px ;
+	border-width:3px;
+ 	border-style:dotted;
+ 	border-color:007fff;  /*bleu*/
+	border-radius:10px 10px;
+
+}
+
+#footer 
+{
+	background-color: #595959 ; /*gris clair */
+}
+
+#header 
+{
+	background-color: #595959 ; /*gris clair */
+}
+
+#chantier
+{
+	text-align: center;
+}
+
+#form_sub_title
+{
+	text-align: center;
+}
+
+#valid_form_button
+{
+	text-align: center;
+}
+
+#navbar_profil_pict
+{
+	max-height: 20px;
+
+}
+#message_profil_pict
+{
+	max-height: 40px;
+
+}
+ 
+#board_profil_pict
+{
+	max-height: 200px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto
+
+}
+
+#info_perso
+{
+	text-align: center;
+}
+
+#titre_accueil
+{
+	text-align: center;
+}
+
+#hr_titre
+{
+		border-width:3px;
+
+}
+
+#date_message
+{
+	text-align: right;
+	margin-right: 15px;
+}
+
+#listing_message
+{ 
+	max-height: 95px ;
+	overflow: hidden;
+  	-o-text-overflow: ellipsis; 
+  	/*text-overflow: ellipsis; /**/
+}
+
+#texte_centre
+{
+	text-align: center;
+}
