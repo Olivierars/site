@@ -30,6 +30,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<?php
 	 					echo "Trajet <strong>".ucfirst($data->ville_depart) . " >> " . ucfirst($data->ville_arrivee)  . "</strong> le ".$date_trajet." à ".$heure_trajet." ";
 	 					echo str_repeat("&nbsp;", 10);
+	 					echo $data->Nof_candidats." candidat(s)" ; 
+	 					echo str_repeat("&nbsp;", 10);
+	 					echo anchor("Espace_perso/Trajet/trajet/".$data->id," Voir détail du trajet");
+
 	 					// echo anchor("Espace_perso/Mes_annonces/supprime_trajet/".$data->id,"Supprimer ce trajet ?");
 			    		?>
 	    			</div>

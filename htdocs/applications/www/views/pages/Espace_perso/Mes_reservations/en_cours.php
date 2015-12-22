@@ -36,8 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             echo "<strong>".ucfirst($trajet[$i][0]->ville_depart) . " >> ".ucfirst($trajet[$i][0]->ville_arrivee)."</strong>, le ".$date_trajet." à ".$heure_trajet." " ;
             echo "souhaité par ".ucfirst($data_posteur[$i][0]->prenom) . " " . ucfirst($data_posteur[$i][0]->nom);
             
-            // Détail trajet
-            echo anchor("Espace_perso/Trajet/trajet/".$trajet[$i][0]->id," Voir détail du trajet ? ");
+            echo str_repeat("&nbsp;", 10);
 
             // Statut
             if(strcmp($statut[$i],'attente_confirmation')==0)
@@ -52,6 +51,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <FONT COLOR=#00CE00> Confirmé </FONT>
               <?php 
             }
+            
+            echo str_repeat("&nbsp;", 10);
+
+            // Détail trajet
+            echo anchor("Espace_perso/Trajet/trajet/".$trajet[$i][0]->id," Voir détail du trajet ");
+
+
             ?>
             </div>
           </ul> 

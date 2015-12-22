@@ -84,6 +84,8 @@ class Mes_annonces extends CI_Controller {
 		$data_profil= $this->Espace_persoManager->get_profil($data['id_posteur']);
 		$data['role'] = $data_profil[0]->role;
 
+
+
 		// Pagination 
 		// $this->load->library('pagination');
 		// $config = array();
@@ -96,6 +98,18 @@ class Mes_annonces extends CI_Controller {
 		// $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 		$data["results"] = $this->Espace_persoManager->voir_trajet_perso($data['id_posteur']);//,$config["per_page"], $page);
     // $data["links"] = $this->pagination->create_links();
+    // print_r($data["results"]);
+    // Récupération du nombre de candidat au trajet
+    $Nof_trajet = sizeof($data["results"]);
+    $Nof_candidats = array();
+    for($i = 0 ; $i < $Nof_trajet ; $i ++)
+    { 
+      $id_trajet = $data['results'][$i]->id ; 
+      $data['results'][$i]->Nof_candidats  = $this->Espace_persoManager->get_nbre_candidat($id_trajet);
+    }
+    // $data['nombre_candidat'] = $Nof_candidats; 
+    // print_r($data['results']) ; 
+
 
 		$data['title'] = ucfirst($page); // Capitalize the first letter
 		$data['description'] = 'Proposition de trajet a venir';

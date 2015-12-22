@@ -37,7 +37,7 @@ class Profil extends CI_Controller {
     
   }
 
-  public function modif_profil($page = 'modif_profil')
+  public function modif_profil()
   {
     $session_data   = $this->session->userdata('logged_in');
     $data['email']  = $session_data['email'];
@@ -109,6 +109,26 @@ class Profil extends CI_Controller {
     $this->load->view('templates/header', $data);
     $this->load->view('pages/Espace_perso/Profil/'.$page, $data,$error);
     $this->load->view('templates/footer', $data);
+  }
+
+  public function profil_public($id_personne)
+  {
+    $session_data   = $this->session->userdata('logged_in');
+    $data['email']  = $session_data['email'];
+    $data['id']     = $session_data['id'];
+    
+    $page = 'profil_public';
+    $data['title'] = ucfirst($page); // Capitalize the first letter
+    $data['description'] = 'Profil public';
+    $data['menu'] = 'profil' ; 
+    $data['data_profil'] = $this->Espace_persoManager->get_profil($data['id'] );
+    $data['id_personne'] = $id_personne ;
+    $data['data_profil_public'] = $this->Espace_persoManager->get_profil($id_personne);
+    $this->load->view ('templates/navigation_perso',$data);
+    $this->load->view('templates/header', $data);
+    $this->load->view('pages/Espace_perso/Profil/'.$page, $data);
+    $this->load->view('templates/footer', $data); 
+    
   }
 
 }

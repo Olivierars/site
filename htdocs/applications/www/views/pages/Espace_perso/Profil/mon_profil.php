@@ -3,6 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 
 <div class="container">
+	<ul class="nav nav-pills">
+	  	<li role="presentation" class="active"><a href="<?php echo site_url('Espace_perso/Profil/mon_profil') ?>">Modifier mon profil</a></li>
+	  	<li role="presentation" ><a href="<?php echo site_url('Espace_perso/Profil/profil_public/'.$id) ?>">Profil public</a></li>
+	</ul>
 
 	<br>
 	<legend> Un profil détaillé met de suite en confiance, n'hésitez pas à le compléter ! </legend>

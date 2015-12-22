@@ -111,6 +111,24 @@ class Espace_perso_model extends CI_Model
 		$sql = "UPDATE $table SET statut = 'annule' WHERE id = $id" ;
 		$this->db->query($sql);
 	}
+
+	public function get_nbre_candidat($id_trajet)
+	{
+		$table = 'candidat_vs_trajet';
+		$this->db->where('id_trajet', $id_trajet);
+		$this->db->from($table);
+		return $this->db->count_all_results();
+	}	
+
+	public function get_ids_candidat($id_trajet)
+	{
+		$table = 'candidat_vs_trajet';
+		return $this->db->select('`id_candidat`',false)
+			-> from ($table)
+			-> where('id_trajet', $id_trajet)
+			-> get()
+			-> result();
+	}	
 	
 
 // MESSAGE ----------------------------------------------------

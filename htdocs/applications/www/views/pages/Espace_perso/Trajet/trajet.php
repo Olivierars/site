@@ -3,12 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 
 <div class="container">
-	<ul class="nav nav-pills">
+	<!-- <ul class="nav nav-pills">
 	<li role="presentation"  class="active"><a href="<?php echo site_url('Espace_perso/Mes_reservations/recherche_trajet') ?>">Rechercher un trajet</a></li>
     <li role="presentation"><a href="<?php echo site_url('Espace_perso/Mes_reservations/en_cours') ?>">Mes réservations en cours</a></li>
     <li role="presentation"><a href="<?php echo site_url('Espace_perso/Mes_reservations/archives') ?>">Mes réservations archivées</a></li>
 	</ul>
-	<br>
+	<br> -->
 
 	<h3>Détail du trajet</h3>
 
@@ -27,8 +27,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	
 	echo "Trajet proposé par ".ucfirst($prenom_posteur)." ".ucfirst($nom_posteur)."<br>"; 
 	echo "De ".ucfirst($ville_depart) . " >> " . ucfirst($ville_arrivee)."<br>" ;
-	echo "Le ".$date_trajet . " à ".$heure_trajet."<br>";
-	echo "Message : ".$message."<br><br>"; ?>
+	echo "Le ".$date_trajet . " à ".$heure_trajet."<br><br>";
+	echo "Message : ".$message."<br><br>"; 
+	echo $Nof_candidats . " candidat(s) : <br> ";
+	for($i=0 ; $i< $Nof_candidats ; $i++)
+	{	
+		 echo anchor("Espace_perso/Profil/profil_public/".$candidat[$i][0]->id,$candidat[$i][0]->prenom);
+		 echo "<br>";
+	}
+		  
+	?>
 
 </div>
 

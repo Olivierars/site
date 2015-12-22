@@ -27,19 +27,34 @@ class Trajet extends CI_Controller {
     if($this->session->userdata('logged_in'))
     {
       $session_data         = $this->session->userdata('logged_in');
-      $data['id_candidat']  = $session_data['id'];
-      $data['id_trajet']    = $id ;
 
+      // Données du membre connecté
+      $data['id_membre']  = $session_data['id'];
+      $data['data_profil'] = $this->Espace_persoManager->get_profil($data['id_membre']);
+
+      // Données du trajet
+      $data['id_trajet']    = $id ;
+      $data['data_trajet'] = $this->Espace_persoManager->get_trajet($data['id_trajet']);
+
+      // Données du posteur du trajet
+      $id_posteur = $data['data_trajet'][0]->id_posteur;
+      $data['data_posteur'] =  $this->Espace_persoManager->get_profil($id_posteur);
+
+      // Données des candidats à l'accomagnement sur ce trajet 
+      $data['Nof_candidats'] = $this->Espace_persoManager->get_nbre_candidat($data['id_trajet']);
+      $ids_candidats = $this->Espace_persoManager->get_ids_candidat($data['id_trajet']);
+      // print_r($ids_candidats);
+      for($i=0 ; $i<$data['Nof_candidats'] ; $i++)
+      {
+        $data['candidat'][$i] =  $this->Espace_persoManager->get_profil($ids_candidats[$i]->id_candidat);
+      }
+      // print_r($data['candidat']);
 
 
       // Chargement de la page 
       $page = 'trajet';
       $data['title'] = ucfirst($page); // Capitalize the first letter
       $data['description'] = 'Détail du trajet';
-      $data['data_trajet'] = $this->Espace_persoManager->get_trajet($data['id_trajet']);
-      $data['data_profil'] = $this->Espace_persoManager->get_profil($data['id_candidat']);
-      $id_posteur = $data['data_trajet'][0]->id_posteur;
-      $data['data_posteur'] =  $this->Espace_persoManager->get_profil($id_posteur);
       $data['menu'] = 'mes_reservations' ; 
       $this->load->view ('templates/navigation_perso',$data);
       $this->load->view('templates/header', $data);
