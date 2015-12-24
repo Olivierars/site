@@ -81,10 +81,7 @@ class Mes_annonces extends CI_Controller {
 		// Récupération des donnée du compte
 		$session_data = $this->session->userdata('logged_in');
 		$data['id_posteur']     = $session_data['id'];
-		$data_profil= $this->Espace_persoManager->get_profil($data['id_posteur']);
-		$data['role'] = $data_profil[0]->role;
-
-
+    $data['data_profil'] = $this->Espace_persoManager->get_profil($data['id_posteur']);
 
 		// Pagination 
 		// $this->load->library('pagination');
@@ -94,26 +91,30 @@ class Mes_annonces extends CI_Controller {
 		// $config["per_page"] = 5;
 		// $config["uri_segment"] = 3;
 		// $this->pagination->initialize($config);
-
 		// $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-		$data["results"] = $this->Espace_persoManager->voir_trajet_perso($data['id_posteur']);//,$config["per_page"], $page);
     // $data["links"] = $this->pagination->create_links();
-    // print_r($data["results"]);
-    // Récupération du nombre de candidat au trajet
+
+
+		$data["results"] = $this->Espace_persoManager->voir_trajet_perso($data['id_posteur']);//,$config["per_page"], $page);
+
     $Nof_trajet = sizeof($data["results"]);
     $Nof_candidats = array();
+
     for($i = 0 ; $i < $Nof_trajet ; $i ++)
     { 
-      $id_trajet = $data['results'][$i]->id ; 
-      $data['results'][$i]->Nof_candidats  = $this->Espace_persoManager->get_nbre_candidat($id_trajet);
-    }
-    // $data['nombre_candidat'] = $Nof_candidats; 
-    // print_r($data['results']) ; 
+      $data['results'][$i]->data_trajet   = $this->Espace_persoManager->get_trajet($data['results'][$i]->id);
+      $data['results'][$i]->Nof_candidats = $this->Espace_persoManager->get_nbre_candidat($data['results'][$i]->id);
+      $data['results'][$i]->ids_candidats = $this->Espace_persoManager->get_ids_candidat($data['results'][$i]->id);
+      
+      for($j = 0 ; $j<$data['results'][$i]->Nof_candidats ; $j++)
+      {
+        $data['data_profil_public'][$j] = $this->Espace_persoManager->get_profil($data['results'][$i]->ids_candidats[$j]->id_candidat);
+      }
 
+    }
 
 		$data['title'] = ucfirst($page); // Capitalize the first letter
 		$data['description'] = 'Proposition de trajet a venir';
-		$data['data_profil'] = $this->Espace_persoManager->get_profil($data['id_posteur']);
     $data['menu'] = 'mes_annonces' ; 
 		$this->load->view ('templates/navigation_perso',$data);
 		$this->load->view('templates/header', $data);
@@ -123,7 +124,6 @@ class Mes_annonces extends CI_Controller {
     }
     else
     {
-      	//If no session, redirect to login page
       	redirect('Utilisateur/connexion', 'refresh');
     }
   }

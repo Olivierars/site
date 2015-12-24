@@ -101,16 +101,8 @@
             <?php 
             }
             ?>
-
             Profil</a></li> 
-            
-
         </ul>
-        
-        
-        <!-- <ul class="nav navbar-nav navbar-right">
-          <button onclick="location.href='<?php echo site_url('Utilisateur/deconnexion') ?>'" class="btn btn-default navbar-btn">SE DECONNECTER</button>
-        </ul> -->
 
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

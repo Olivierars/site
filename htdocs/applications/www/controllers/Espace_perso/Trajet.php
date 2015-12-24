@@ -43,13 +43,10 @@ class Trajet extends CI_Controller {
       // Données des candidats à l'accomagnement sur ce trajet 
       $data['Nof_candidats'] = $this->Espace_persoManager->get_nbre_candidat($data['id_trajet']);
       $ids_candidats = $this->Espace_persoManager->get_ids_candidat($data['id_trajet']);
-      // print_r($ids_candidats);
       for($i=0 ; $i<$data['Nof_candidats'] ; $i++)
       {
         $data['candidat'][$i] =  $this->Espace_persoManager->get_profil($ids_candidats[$i]->id_candidat);
       }
-      // print_r($data['candidat']);
-
 
       // Chargement de la page 
       $page = 'trajet';

@@ -24,18 +24,11 @@
 
 
 
+
+
+<!-- JAVASCRIPT -->
 <!-- jQuery -->
-<!-- <script src="/assets/js/jquery.js"></script>
- --><!-- A MODIFIER LORS DU PASSAGE EN PROD pour ne plus l'avoir en local -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-
-<!-- Lien faire les fichiers js  -->
-<script src="/assets/js/test.js"></script>
-<script src="assets/js/star-rating.min.js" type="text/javascript"></script>
-<!-- AJAX  --> 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-
 
 <!-- Bootstrap -->
 <script src="/assets/js/bootstrap.js"></script>

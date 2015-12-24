@@ -122,7 +122,6 @@ class Profil extends CI_Controller {
     $data['description'] = 'Profil public';
     $data['menu'] = 'profil' ; 
     $data['data_profil'] = $this->Espace_persoManager->get_profil($data['id'] );
-    $data['id_personne'] = $id_personne ;
     $data['data_profil_public'] = $this->Espace_persoManager->get_profil($id_personne);
     $this->load->view ('templates/navigation_perso',$data);
     $this->load->view('templates/header', $data);

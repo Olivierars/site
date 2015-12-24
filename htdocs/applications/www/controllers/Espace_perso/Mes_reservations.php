@@ -47,9 +47,14 @@ class Mes_reservations extends CI_Controller {
         $data['results']          = $this->Espace_persoManager->rechercher_trajet($data);
         $results = $data['results'] ;
         if(!empty($results))
-        {
+        { 
           $id_posteur  = $results[0]->id_posteur ;
           $data['data_posteur']   = $this->Espace_persoManager->get_profil($id_posteur);
+
+          // Données du trajet
+          $data['id_trajet']    = $results[0]->id ;
+          $data['trajet'] = $this->Espace_persoManager->get_trajet($data['id_trajet']);
+
         }
         
       }
@@ -173,7 +178,7 @@ class Mes_reservations extends CI_Controller {
       {
         $trajet        = array();
         $data_posteur  = array(); 
-        $id_resa       = array() ;
+        $id_resa       = array();
         $statut        = array();
         $Nof_trajet = sizeof($ids_trajet);
         
@@ -183,7 +188,7 @@ class Mes_reservations extends CI_Controller {
           $data_posteur[] = $this->Espace_persoManager->get_profil($trajet[$i][0]->id_posteur);
           $id_resa[]      = $ids_trajet[$i]->id ; 
           $statut[]       = $ids_trajet[$i]->statut ; 
-
+        
         }
         $data['trajet']        = $trajet ;
         $data['data_posteur']  = $data_posteur ;

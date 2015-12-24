@@ -51,8 +51,44 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							echo "Accompagnez <strong> ".strtoupper($data_posteur[0]->prenom);
 							echo " </strong> sur le trajet <strong> ".ucfirst($data->ville_depart) . " >> " . ucfirst($data->ville_arrivee)."</strong>";
 			    			echo " le ".$date_trajet." à ".$heure_trajet." ! " ;
+			 				echo str_repeat("&nbsp;", 10);
+
 			 				?>
-			 				<a href="<?php echo site_url('Espace_perso/Mes_reservations/trajet/'.$data->id) ?>" > Voir le détail du trajet </a>
+			 				<!-- Button trigger modal -->
+				            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+				               Voir détail trajet
+				            </button>
+
+				            <!-- Modal -->
+				            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				           		<div class="modal-dialog" role="document">
+				                  	<div class="modal-content">
+				                    	<div class="modal-header">
+				                      		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				                      		<h4 class="modal-title" id="myModalLabel">Détail du trajet</h4>
+				                    	</div>
+					                    <div class="modal-body">
+					                      	<?php
+					                      	$id_trajet    = $trajet[0]->id;
+					                      	$ville_depart   = $trajet[0]->ville_depart;
+					                      	$ville_arrivee  = $trajet[0]->ville_arrivee ;
+					                      	$date_trajet  = $trajet[0]->date_trajet ;
+					                      	$message    = $trajet[0]->message;
+					                      	$nom_posteur  = $data_posteur[0]->nom;
+					                      	$prenom_posteur = $data_posteur[0]->prenom;
+					                      	$date       = strtotime($date_trajet);
+					                      	$date_trajet  = date('d/m/y',$date);
+					                      	$heure_trajet   = date('H:i',$date);
+					                      
+					                      	echo "Trajet proposé par ".ucfirst($prenom_posteur)." ".ucfirst($nom_posteur)."<br>"; 
+					                      	echo "De ".ucfirst($ville_depart) . " >> " . ucfirst($ville_arrivee)."<br>" ;
+					                      	echo "Le ".$date_trajet . " à ".$heure_trajet."<br><br>";
+					                      	echo "Message : ".$message."<br><br>"; 
+					                      	?>
+					                    </div>
+				                  	</div>
+				           	    </div>
+				            </div>
 		    			</div>
 	    			</ul> 		
 				</div>

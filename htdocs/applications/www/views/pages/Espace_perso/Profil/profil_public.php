@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	?>
 	
 	<br>
-<legend>Profil public </legend>
+	<legend>Profil public </legend>
 	<?php 
 	$filename = "../assets/images/photos_profil/photo_profil_".$data_profil_public[0]->id.".png" ;
 	if (file_exists($filename))

@@ -10,102 +10,49 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</p>
 	<br>
 	
-    <div class="row">
+	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 		<div class="panel panel-primary">
-			<div class="panel-heading">
-				<h3 class="panel-title">Question #1 : Blablablabla ?</h3>
-				<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+			<div class="panel-heading" role="tab" id="headingOne">
+				<h4 class="panel-title">
+					<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						Question #1 : Blablablabla ?
+					</a>
+				</h4>
 			</div>
-			<!-- <div class="collapse panel-collapsed"> -->
-			
-			<div class="panel-body">
-                Founded in 1892 and headquartered in Fairfield, CT, LexisNexis Corporate Affiliations 
-                is a technology and financial services company. 
-                The company offers products and services ranging from aircraft engines, power generation, 
-                water processing, and household appliances, among others. 
-                
+			<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+				<div class="panel-body">
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+				</div>
 			</div>
-			<!-- </div> -->
+		</div> <br>
+		<div class="panel panel-primary">
+			<div class="panel-heading" role="tab" id="headingTwo">
+				<h4 class="panel-title">
+					<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+						Question #2 : Blablablabla ?
+					</a>
+				</h4>
+			</div>
+			<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+				<div class="panel-body">
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+				</div>
+			</div>
+		</div><br>
+		<div class="panel panel-primary">
+			<div class="panel-heading" role="tab" id="headingThree">
+				<h4 class="panel-title">
+					<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+						Question #3 : Blablablabla ?
+					</a>
+				</h4>
+			</div>
+			<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+				<div class="panel-body">
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+				</div>
+			</div>
 		</div>
 	</div>
-
-	<div class="row">
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				<h3 class="panel-title">Question #2: Blablablabla ?</h3>
-				<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
-			</div>
-			<!-- <div class="collapse panel-collapsed"> -->
-			
-			<div class="panel-body">
-                Founded in 1892 and headquartered in Fairfield, CT, LexisNexis Corporate Affiliations 
-                is a technology and financial services company. 
-                The company offers products and services ranging from aircraft engines, power generation, 
-                water processing, and household appliances, among others. 
-                
-			</div>
-			<!-- </div> -->
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				<h3 class="panel-title">Question #3 : Blablablabla ?</h3>
-				<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
-			</div>
-			<!-- <div class="collapse panel-collapsed"> -->
-			
-			<div class="panel-body">
-                Founded in 1892 and headquartered in Fairfield, CT, LexisNexis Corporate Affiliations 
-                is a technology and financial services company. 
-                The company offers products and services ranging from aircraft engines, power generation, 
-                water processing, and household appliances, among others. 
-                
-			</div>
-			<!-- </div> -->
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				<h3 class="panel-title">Question #4 : Blablablabla ?</h3>
-				<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
-			</div>
-			<!-- <div class="collapse panel-collapsed"> -->
-			
-			<div class="panel-body">
-                Founded in 1892 and headquartered in Fairfield, CT, LexisNexis Corporate Affiliations 
-                is a technology and financial services company. 
-                The company offers products and services ranging from aircraft engines, power generation, 
-                water processing, and household appliances, among others. 
-                
-			</div>
-			<!-- </div> -->
-		</div>
-	</div>
-
-
 </div>
-
-<script type="text/javascript">
-    jQuery(function ($) {
-        $('.panel-heading span.clickable').on("click", function (e) {
-            if ($(this).hasClass('panel-collapsed')) {
-                // expand the panel
-                $(this).parents('.panel').find('.panel-body').slideDown();
-                $(this).removeClass('panel-collapsed');
-                $(this).find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
-            }
-            else {
-                // collapse the panel
-                $(this).parents('.panel').find('.panel-body').slideUp();
-                $(this).addClass('panel-collapsed');
-                $(this).find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
-            }
-        });
-    });
-</script>
-
 </html>
